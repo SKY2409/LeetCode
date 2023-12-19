@@ -1,0 +1,18 @@
+class Solution(object):
+    def distMoney(self, money, children):
+        """
+        :type money: int
+        :type children: int
+        :rtype: int
+        """
+        if money//children > 0:
+            money = money - children #Distributing 1$ each
+            t1 = money//7 #to how many children can we distribute exactly 7$ each
+            if t1 == children:
+                return(children)
+            elif t1 < children:
+                return(t1)
+            elif t1 > children:
+                return(children-1)
+        else:
+            return(-1)
